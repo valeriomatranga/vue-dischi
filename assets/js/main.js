@@ -11,11 +11,7 @@ BONUS 2: Ordinare i dischi per anno di uscita.
 
     data:{
         url:"https://flynn.boolean.careers/exercises/api/array/music",
-        poster:[],
-        title:[],
-        author:[],
-        genre:[],
-        year:[],
+        albums:[],
     },
 
     methods:{
@@ -26,15 +22,18 @@ BONUS 2: Ordinare i dischi per anno di uscita.
         const album = this.url;
         console.log(album);
 
-        axios
-        .get(album)
-        .then(resp =>{
-            this.poster.push(resp.data.response.poster)
-            console.log(this.poster);
-        }).catch(e =>{
-            console.error(e)
-        })
-
+        for (let index = 0; index < 10; index++) {
+            
+            axios
+            .get(album)
+            .then(resp =>{
+                this.albums.push(resp.data.response)
+                console.log(this.albums);
+            }).catch(e =>{
+                console.error(e)
+            })
+            
+        }
 
     }
 })

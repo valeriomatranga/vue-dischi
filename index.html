@@ -16,6 +16,13 @@
   </head>
   <body>
       <div id="app">
+
+        <div class="album" v-for="(album,index) in albums">
+          <img :src="album[index].poster" alt="">
+          <h2>{{album[index].title}}</h2>
+          <h3>{{album[index].author}}</h3>
+          <span>{{album[index].year}}</span>
+        </div>
           
       </div>
 
