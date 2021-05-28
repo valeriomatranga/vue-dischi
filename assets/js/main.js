@@ -21,19 +21,16 @@ BONUS 2: Ordinare i dischi per anno di uscita.
     mounted(){
         const album = this.url;
         console.log(album);
-
-        for (let index = 0; index < 10; index++) {
+    
+        axios
+        .get(album)
+        .then(resp =>{
+            this.albums = resp.data.response
+            console.log(this.albums);
+        }).catch(e =>{
+            console.error(e)
+        })
             
-            axios
-            .get(album)
-            .then(resp =>{
-                this.albums.push(resp.data.response)
-                console.log(this.albums);
-            }).catch(e =>{
-                console.error(e)
-            })
-            
-        }
 
     }
 })

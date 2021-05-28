@@ -1,0 +1,52 @@
+#app{
+background-color: rgba(30, 45, 59, 1);
+}
+
+header{
+    width: 100%;
+    height: 60px;
+    background-color: rgba(46, 58, 70, 1);
+    margin-bottom: 50px;
+}
+
+header img{
+    width: 40px;
+    margin: 10px;
+}
+
+.lista_album{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.album{
+    width: 250px;
+    height: 400px;
+    margin: 20px;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    align-items: center;
+    background-color: rgba(46, 58, 70, 1);
+}
+
+
+.album h3{
+    color: whitesmoke;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.album span{
+    color: rgba(128, 128, 113, 1);
+    font-weight: 600;
+}
+
+.album img{
+    width: 200px;
+    height: 200px;
+
+}

@@ -16,12 +16,17 @@
   </head>
   <body>
       <div id="app">
+        <header>
+          <img src="./assets/img/logo.png" alt="">
+        </header>
 
-        <div class="album" v-for="(album,index) in albums">
-          <img :src="album[index].poster" alt="">
-          <h2>{{album[index].title}}</h2>
-          <h3>{{album[index].author}}</h3>
-          <span>{{album[index].year}}</span>
+        <div class="lista_album">
+          <div class="album" v-for="album in albums">
+            <img :src="album.poster" alt="">
+            <h3>{{album.title}}</h3>
+            <span>{{album.author}}</span>
+            <span>{{album.year}}</span>
+          </div>
         </div>
           
       </div>
