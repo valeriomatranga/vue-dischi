@@ -11,26 +11,42 @@ BONUS 2: Ordinare i dischi per anno di uscita.
 
     data:{
         url:"https://flynn.boolean.careers/exercises/api/array/music",
-        albums:[],
+        albums:'',
+        genereMusicale:'All',
     },
 
     methods:{
+        
         
     },
     
     mounted(){
         const album = this.url;
-        console.log(album);
+        //console.log(album);
     
         axios
         .get(album)
         .then(resp =>{
             this.albums = resp.data.response
-            console.log(this.albums);
+            //console.log(this.albums);
+            this.albums = this.albums.sort((precedente,successivo) => successivo.year - precedente.year);
         }).catch(e =>{
             console.error(e)
         })
             
 
+    },
+
+    computed:{
+        categoria(){
+            if (this.genereMusicale === 'All'){
+                return this.albums
+            }else{
+                return this.albums.filter(album => {
+                    return album.genre === this.genereMusicale
+                })
+            }
+        }
     }
+
 })
